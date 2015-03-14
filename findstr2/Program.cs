@@ -10,7 +10,7 @@ namespace findstr2
         static void Main(string[] args)
         {
             string rawRegex = "";
-            string filePath = ".\\";
+            string filePath = "";
             bool multiLine=false;
             RegexOptions regOptions = RegexOptions.Compiled;
             var opts = new Options("Finds strings matching a regular expression in a file")
@@ -24,10 +24,15 @@ namespace findstr2
             {
                 return;
             }
+
+            if (string.IsNullOrEmpty(filePath) || File.Exists(filePath))
+            {
+                Console.Error.WriteLine("Error: file does not exist.");
+                return;
+            }
+
             Regex searchPattern = new Regex(rawRegex, regOptions);
             string text = multiLine ? string.Join("",File.ReadAllLines(filePath)) : File.ReadAllText(filePath);
-            
-            
 
             var matchs = searchPattern.Matches(text);
             foreach (var m in matchs)
