@@ -2,7 +2,7 @@
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jmaxxz/findstr2?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-```shell
+```
 $ findstr2.exe --help
 Usage: findstr2.exe [-?] [-l] [-i] <regex> <file>
 Description: Finds strings matching a regular expression in a file
@@ -20,7 +20,7 @@ ________________________________________________________________________________
 --ignorecase                       | 
 ------------------------------------------------------------------------------------
 <regex>                            |  The regex text being searched for matches.
-```
 ------------------------------------------------------------------------------------
 <file>                             |  The file to be searched
 ------------------------------------------------------------------------------------
+```
